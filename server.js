@@ -3,7 +3,7 @@ const sqlite3 = require('sqlite3').verbose();
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 const db = new sqlite3.Database('./daniel.db'); // Use o nome exato do seu arquivo
-app.post('/salvar', (req, res) => {
+app.post('https://miniature-space-parakeet-5g669x4rvq5qf4j7v-5500.app.github.dev/salvar', (req, res) => {
 const { nome, telefone, email } = req.body;
 const sql = `INSERT INTO contatos (nome, telefone, email) VALUES (?, ?, ?)`;
 
