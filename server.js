@@ -1,9 +1,8 @@
-import express from 'express';
-import sqlite3 from 'sqlite3';
-const db_sqlite3 = sqlite3.verbose();
+const express = require('express');
+const sqlite3 = require('sqlite3').verbose();
 const app = express();
 app.use(express.urlencoded({ extended: true }));
-const db = new db_sqlite3.Database('./daniel.db'); // Use o nome exato do seu arquivo
+const db = new sqlite3.Database('./daniel.db'); // Use o nome exato do seu arquivo
 app.post('/salvar', (req, res) => {
 const { nome, telefone, email } = req.body;
 const sql = `INSERT INTO contatos (nome, telefone, email) VALUES (?, ?, ?)`;
